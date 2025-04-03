@@ -10,7 +10,6 @@ namespace ContentManagementSystem.Domain.Entities
 {
     public class Author : BaseEntity
     {
-        public Guid PostId { get; set; }
         public enum Role
         {
             Admin,
@@ -28,7 +27,7 @@ namespace ContentManagementSystem.Domain.Entities
         }
         public string PasswordHash { get; set; } // Sifre hashlenecek identity
         public string ProfilePicPath { get; set; }
-        public Post Post { get; set; }
+        public ICollection<Post> Posts { get; set; }
 
     }
 }

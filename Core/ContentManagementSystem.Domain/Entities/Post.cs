@@ -10,6 +10,7 @@ namespace ContentManagementSystem.Domain.Entities
 
     public class Post : BaseEntity
     {
+        public Guid AuthorId { get; set; }
         public enum Status
         {
             Draft,
@@ -29,7 +30,7 @@ namespace ContentManagementSystem.Domain.Entities
         public int ViewCount { get; set; }
         public string PostPicturePath { get; set; }
         public ICollection<Category> Categories { get; set; }
-        public ICollection<Author> Authors { get; set; }
+        public Author Author { get; set; }
         public ICollection<Tag> Tags { get; set; }
     }
 }

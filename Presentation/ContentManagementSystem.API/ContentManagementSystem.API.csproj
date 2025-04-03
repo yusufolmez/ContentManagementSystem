@@ -11,7 +11,9 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="Controllers\" />
+    <ProjectReference Include="..\..\Core\ContentManagementSystem.Application\ContentManagementSystem.Application.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ContentManagementSystem.Infrastructure\ContentManagementSystem.Infrastructure.csproj" />
+    <ProjectReference Include="..\..\Infrastructure\ContentManagementSystem.Persistance\ContentManagementSystem.Persistance.csproj" />
   </ItemGroup>
 
 </Project>
