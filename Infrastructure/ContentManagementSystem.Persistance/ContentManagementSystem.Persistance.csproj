@@ -28,4 +28,8 @@
     <ProjectReference Include="..\..\Core\ContentManagementSystem.Application\ContentManagementSystem.Application.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Repositories\File\" />
+  </ItemGroup>
+
 </Project>

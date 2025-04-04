@@ -1,4 +1,5 @@
 ﻿using ContentManagementSystem.Application.Abstraction;
+using ContentManagementSystem.Application.Repositories;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
@@ -8,18 +9,15 @@ namespace ContentManagementSystem.API.Controllers
     [ApiController]
     public class PostController : ControllerBase
     {
-        private readonly IPostService _postService;
-        public PostController(IPostService postService)
+        private readonly IPostReadRepository _postReadRepository;
+        private readonly IPostWriteRepository _postWriteRepository;
+
+        public PostController(IPostReadRepository postReadRepository, IPostWriteRepository postWriteRepository)
         {
-            _postService = postService;
+            _postReadRepository = postReadRepository;
+            _postWriteRepository = postWriteRepository;
         }
 
-        [HttpGet]
-        public IActionResult GetAllPosts()
-        {
-            var posts = _postService.GetPosts();
-            return Ok(posts);
-        }
 
     }
 }
