@@ -8,7 +8,6 @@ namespace ContentManagementSystem.Application.ViewModels.Author
 {
     public class VM_Create_Author
     {
-        public Guid Id { get; set; }  // Id otomatik olarak GUID tarafından atanacaktır
         public string Name { get; set; }
         public string Email { get; set; }
         public string Bio { get; set; }
