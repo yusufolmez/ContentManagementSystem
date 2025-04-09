@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ContentManagementSystem.Application.Repositories
+namespace ContentManagementSystem.Application.Repositories.Category
 {
     public interface ICategoryReadRepository : IReadRepository<ContentManagementSystem.Domain.Entities.Category> 
     {

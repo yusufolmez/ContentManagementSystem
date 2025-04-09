@@ -9,10 +9,11 @@ namespace ContentManagementSystem.Domain.Entities
 {
     public class Category : BaseEntity
     {
+        public Guid? ParentCategoryId { get; set; }
         public string Name { get; set; }
         public string Description { get; set; }
         public string Slug { get; set; }
-        public ICollection<Category> ParentCategory { get; set; }
+        public Category? ParentCategory { get; set; }
         public ICollection<Post> Posts { get; set; }
     }
 }

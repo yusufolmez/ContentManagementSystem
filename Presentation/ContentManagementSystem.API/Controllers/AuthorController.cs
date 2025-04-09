@@ -33,9 +33,9 @@ namespace ContentManagementSystem.API.Controllers
         [HttpPost]
         public async Task<IActionResult> Post(VM_Create_Author model)
         {
-            if (ModelState.IsValid)
+            if (!ModelState.IsValid)
             {
-
+                return BadRequest(ModelState);
             }
             await _authorWriteRepository.AddAsync(new()
             {
