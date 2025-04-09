@@ -44,6 +44,9 @@ namespace ContentManagementSystem.API.Controllers
             {
                 return BadRequest(ModelState);
             }
+            var posts = await _postReadRepository
+                .GetWhere(p => model.PostIds.Contains(p.Id))
+                .ToListAsync();
             await _categoryWriteRepository.AddAsync(new()
             {
                 Id = Guid.NewGuid(),
@@ -51,7 +54,7 @@ namespace ContentManagementSystem.API.Controllers
                 Description = model.Description,
                 Slug = model.Slug,
                 ParentCategoryId = model.ParentCategoryId,
-                Posts = model.PostIds.Select(p => new Domain.Entities.Post { Id = p }).ToList()
+                Posts = posts
             });
             await _categoryWriteRepository.SaveAsync();
             return Created("", model);

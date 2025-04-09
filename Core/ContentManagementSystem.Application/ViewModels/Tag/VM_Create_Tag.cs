@@ -6,7 +6,10 @@ using System.Threading.Tasks;
 
 namespace ContentManagementSystem.Application.ViewModels.Tag
 {
-    internal class VM_Create_Tag
+    public class VM_Create_Tag
     {
+        public string Name { get; set; }
+        public string Slug { get; set; }
+        public List<Guid> PostIds { get; set; } = new List<Guid>();
     }
 }
